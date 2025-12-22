@@ -119,64 +119,70 @@ voice_scheme_agent/
 ├── tts.py                   # Telugu text-to-speech
 └── README.md                # Project documentation
 
-## ⚙️ Setup Instructions
+⚙️ Setup Instructions
+This document explains how to set up and run the agent locally.
 
-This document explains how to set up and run the **Telugu Voice-Based Government Scheme Agent** locally.
+🔧 System Requirements
+Operating System: Windows / Linux / macOS
 
----
+Python: 3.9 or 3.10 (recommended)
 
-## 🔧 System Requirements
+Microphone: Required for live voice input
 
-- **Operating System**: Windows / Linux / macOS  
-- **Python**: 3.9 or 3.10 (recommended)  
-- **Microphone**: Required for live voice input  
-- **FFmpeg**: Required for audio processing  
+FFmpeg: Required for audio processing
 
----
+🐍 Python Environment Setup
+1. Create a Virtual Environment
+It is recommended to use a virtual environment to keep dependencies organized.
 
-## 🐍 Python Environment Setup
+Bash
 
-### 1️⃣ Create a Virtual Environment (Optional but Recommended)
-
-```bash
+# Create environment
 python -m venv venv
-### Install Dependencies
 
+# Activate environment (Windows)
+venv\Scripts\activate
+
+# Activate environment (Linux/macOS)
+source venv/bin/activate
+2. Install Dependencies
 Make sure you are inside the project directory, then run:
+
+Bash
 
 pip install -r requirements.txt
 🎧 FFmpeg Installation
-
 FFmpeg is required for audio decoding and preprocessing.
 
 Windows
+Download FFmpeg from ffmpeg.org.
 
-Download FFmpeg from: https://ffmpeg.org/download.html
+Extract the folder to a permanent location.
 
-Extract the folder
+Add the bin/ directory to your System PATH.
 
-Add the bin/ directory to System PATH
+Verify: ffmpeg -version
 
-Verify installation:
+Linux/macOS
+Bash
 
-ffmpeg -version
-
-Linux
+# Linux
 sudo apt install ffmpeg
 
-macOS
+# macOS
 brew install ffmpeg
-
 ▶️ Running the Project
-1️⃣ Prepare Audio Input
+1. Prepare Audio Input
+Place Telugu .wav audio files inside the audio/ directory.
 
-Place Telugu .wav audio files inside the audio/ directory
+Note: Audio should be 16kHz, mono for best results.
 
-Audio should be 16kHz, mono for best results
+2. Run the Agent
+Execute the entry point script:
 
-2️⃣ Run the Agent
+Bash
+
 python main.py
-
 
 
 
