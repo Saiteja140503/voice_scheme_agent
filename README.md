@@ -100,25 +100,26 @@ Fetches descriptions and benefits of eligible schemes.
 
 
 
-### 📁 Project Structure
+# Project Structure
 
+```text
 voice_scheme_agent/
-├── main.py                # Entry point
-├── stt.py                 # Speech-to-text (Whisper + filters)
-├── tts.py                 # Telugu text-to-speech
-├── agent.py               # Agent logic & state machine
-├── agent_state.py         # Conversation memory
-├── eligibility_tool.py    # Eligibility engine (Tool 1)
-├── scheme_tool.py         # Scheme info retrieval (Tool 2)
-├── text_normalizer.py     # Telugu normalization
-├── audio/                 # Telugu WAV voice inputs
-├── images/                # Architecture & state diagrams
+├── audio/                   # Telugu WAV voice inputs
+├── images/                  # Architecture & state diagrams
 │   ├── architecture_flow.png
 │   └── state_machine.png
-├── requirements.txt
-└── README.md
----
-# ⚙️ Setup Instructions
+├── agent.py                 # Agent logic & state machine
+├── agent_state.py           # Conversation memory
+├── eligibility_tool.py      # Eligibility engine (Tool 1)
+├── main.py                  # Entry point
+├── requirements.txt         # Project dependencies
+├── scheme_tool.py           # Scheme info retrieval (Tool 2)
+├── stt.py                   # Speech-to-text (Whisper + filters)
+├── text_normalizer.py       # Telugu normalization
+├── tts.py                   # Telugu text-to-speech
+└── README.md                # Project documentation
+
+## ⚙️ Setup Instructions
 
 This document explains how to set up and run the **Telugu Voice-Based Government Scheme Agent** locally.
 
