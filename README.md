@@ -39,7 +39,6 @@ The agent asks follow-up questions in Telugu, collects user details, evaluates e
 ## 🧠 Agent Workflow
 
 The agent follows a structured, multi-step flow instead of a single prompt.
-<img width="1024" height="1536" alt="ChatGPT Image Dec 22, 2025, 09_03_14 PM" src="https://github.com/user-attachments/assets/c52dc76d-ce98-4f2c-a8d6-3bac27f6fd39" />
 
 At each step, the agent:
 - asks a question in Telugu
