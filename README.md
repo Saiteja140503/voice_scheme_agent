@@ -117,8 +117,10 @@ voice_scheme_agent/
 ├── text_normalizer.py       # Telugu normalization
 ├── tts.py                   # Telugu text-to-speech
 └── README.md                # Project documentation
+---
 
-⚙️ Setup Instructions
+###  ⚙️Setup Instructions
+
 This document explains how to set up and run the agent locally.
 
 🔧 System Requirements
@@ -129,8 +131,8 @@ Python: 3.9 or 3.10 (recommended)
 Microphone: Required for live voice input
 
 FFmpeg: Required for audio processing
-
-🐍 Python Environment Setup
+---
+ 🐍 Python Environment Setup
 1. Create a Virtual Environment
 It is recommended to use a virtual environment to keep dependencies organized.
 
