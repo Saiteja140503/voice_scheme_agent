@@ -80,6 +80,13 @@ At each step, the agent:
 This ensures logical progression and prevents premature conclusions.
 
 ---
+# 🎙️ Voice Scheme Agent
+
+An AI-powered voice assistant for eligibility checks and scheme information with Telugu language support.
+
+---
+
+
 
 ## 🧰 Tools Used
 
@@ -95,31 +102,20 @@ Fetches descriptions and benefits of eligible schemes.
 > Tool usage is explicit and dynamic — responses are not hard-coded.
 
 ---
+# 🎙️ Voice Scheme Agent
 
+An AI-powered voice assistant for eligibility checks and scheme information with Telugu language support.
 
-
-
-# Project Structure
-
-```text
-voice_scheme_agent/
-├── audio/                   # Telugu WAV voice inputs
-├── images/                  # Architecture & state diagrams
-│   ├── architecture_flow.png
-│   └── state_machine.png
-├── agent.py                 # Agent logic & state machine
-├── agent_state.py           # Conversation memory
-├── eligibility_tool.py      # Eligibility engine (Tool 1)
-├── main.py                  # Entry point
-├── requirements.txt         # Project dependencies
-├── scheme_tool.py           # Scheme info retrieval (Tool 2)
-├── stt.py                   # Speech-to-text (Whisper + filters)
-├── text_normalizer.py       # Telugu normalization
-├── tts.py                   # Telugu text-to-speech
-└── README.md                # Project documentation
 ---
 
-###  ⚙️Setup Instructions
+
+
+
+### 🛠 Installation & Setup
+
+For detailed instructions on how to configure your environment and run the agent, please refer to our setup guide:
+
+👉 **[View Setup Instructions](./SETUP.md)**
 
 This document explains how to set up and run the agent locally.
 
@@ -152,6 +148,7 @@ Make sure you are inside the project directory, then run:
 Bash
 
 pip install -r requirements.txt
+
 🎧 FFmpeg Installation
 FFmpeg is required for audio decoding and preprocessing.
 
@@ -184,6 +181,32 @@ Execute the entry point script:
 Bash
 
 python main.py
+# 🎙️ Voice Scheme Agent
+
+An AI-powered voice assistant for eligibility checks and scheme information with Telugu language support.
+
+---
+
+### 📂 Project Structure
+
+```text
+voice_scheme_agent/
+├── audio/                   # Telugu WAV voice inputs
+├── images/                  # Architecture & state diagrams
+│   ├── architecture_flow.png
+│   └── state_machine.png
+├── agent.py                 # Agent logic & state machine
+├── agent_state.py           # Conversation memory
+├── eligibility_tool.py      # Eligibility engine (Tool 1)
+├── main.py                  # Entry point
+├── requirements.txt         # Project dependencies
+├── scheme_tool.py           # Scheme info retrieval (Tool 2)
+├── stt.py                   # Speech-to-text (Whisper + filters)
+├── text_normalizer.py       # Telugu normalization
+├── tts.py                   # Telugu text-to-speech
+└── README.md                # Project documentation
+
+
 
 
 
