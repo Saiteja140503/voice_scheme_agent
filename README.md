@@ -2,6 +2,8 @@
 
 A **voice-first agentic AI system** that helps users identify **eligible government and public welfare schemes** using **Telugu** as the primary interaction language. The system goes beyond a chatbot by reasoning across multiple voice turns, maintaining memory, invoking tools, and handling speech recognition failures.
 
+![Architecture Overview](images/image1.png)
+
 ---
 
 ## 📌 Problem Statement
@@ -20,6 +22,8 @@ This project addresses the problem using a **voice-only Telugu interface**, maki
 > **"నాకు ప్రభుత్వ పథకాల వివరాలు కావాలి"**
 
 The agent asks follow-up questions in Telugu, collects user details, evaluates eligibility, and responds **with spoken Telugu output**.
+
+![User Interaction Flow](images/image2.png)
 
 ---
 
@@ -57,6 +61,9 @@ voice_scheme_agent/
 │     └─ eligibility.py# Eligibility computation
 ├─ data/
 │  └─ schemes.json     # Scheme definitions and criteria
+├─ images/
+│  ├─ image1.png       # Architecture diagram
+│  └─ image2.png       # User interaction flow
 ├─ requirements.txt    # Dependencies
 └─ README.md           # Documentation
 ```
