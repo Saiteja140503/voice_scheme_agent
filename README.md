@@ -2,7 +2,7 @@
 
 A **voice-first agentic AI system** that helps users identify **eligible government and public welfare schemes** using **Telugu** as the primary interaction language. The system goes beyond a chatbot by reasoning across multiple voice turns, maintaining memory, invoking tools, and handling speech recognition failures.
 
-![Architecture Overview](images/image1.png)
+
 
 ---
 
@@ -23,7 +23,7 @@ This project addresses the problem using a **voice-only Telugu interface**, maki
 
 The agent asks follow-up questions in Telugu, collects user details, evaluates eligibility, and responds **with spoken Telugu output**.
 
-![User Interaction Flow](images/image2.png)
+![Architecture Overview](images/image1.png)
 
 ---
 
@@ -44,7 +44,7 @@ The agent follows a structured, multi-step flow instead of a single prompt. It:
 - Receives Telugu speech input from the user  
 - Converts speech to text, reasons over state, and gathers missing details  
 - Determines eligibility and generates a Telugu response, then speaks it back to the user
-
+![User Interaction Flow](images/image2.png)
 ---
 
 ## 📂 Project Structure
@@ -132,4 +132,4 @@ Contributions are welcome via issues and pull requests. Please describe changes 
 
 ## 📜 License
 
-Add your chosen license here (for example, MIT) and include a `LICENSE` file in the repository.
+Apache 2.0
