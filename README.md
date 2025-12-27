@@ -1,17 +1,15 @@
 # 🎙️ Telugu Voice-Based Government Scheme Agent
 
-A **voice-first, agentic AI system** that helps users identify **eligible government and public welfare schemes** using **Telugu**, a native Indian language.
-
-The system goes beyond a chatbot by reasoning across multiple voice turns, maintaining memory, invoking tools, and handling speech recognition failures.
+A **voice-first agentic AI system** that helps users identify **eligible government and public welfare schemes** using **Telugu** as the primary interaction language. The system goes beyond a chatbot by reasoning across multiple voice turns, maintaining memory, invoking tools, and handling speech recognition failures.
 
 ---
 
 ## 📌 Problem Statement
 
 Many citizens want to apply for government schemes but do not know:
-- which schemes they are eligible for
-- what information is required
-- how to access scheme details in their native language
+- Which schemes they are eligible for
+- What information is required
+- How to access scheme details in their native language
 
 This project addresses the problem using a **voice-only Telugu interface**, making it accessible to non-English speakers.
 
@@ -19,7 +17,7 @@ This project addresses the problem using a **voice-only Telugu interface**, maki
 
 ## 🗣️ Example User Request
 
-> **“నాకు ప్రభుత్వ పథకాల వివరాలు కావాలి”**
+> **"నాకు ప్రభుత్వ పథకాల వివరాలు కావాలి"**
 
 The agent asks follow-up questions in Telugu, collects user details, evaluates eligibility, and responds **with spoken Telugu output**.
 
@@ -27,186 +25,104 @@ The agent asks follow-up questions in Telugu, collects user details, evaluates e
 
 ## ✨ Key Features
 
-- 🎧 **Voice-first interaction** (speech input & speech output)
-- 🗣️ **End-to-end Telugu pipeline** (STT → Agent → TTS)
-- 🧠 **Agentic workflow** using a state machine
-- 🗂️ **Conversation memory** across turns
-- 🧰 **Multiple tools** for decision making
-- 🚨 **Failure handling** for unclear or missing speech
+- 🎧 **Voice-first interaction** (speech input and speech output)  
+- 🗣️ **End-to-end Telugu pipeline** (STT → Agent → TTS)  
+- 🧠 **Agentic workflow** using a state machine  
+- 🗂️ **Conversation memory** across turns  
+- 🧰 **Multiple tools** for decision making  
+- 🚨 **Failure handling** for unclear or missing speech  
 
 ---
 
 ## 🧠 Agent Workflow
 
-The agent follows a structured, multi-step flow instead of a single prompt.
-
-At each step, the agent:
-- asks a question in Telugu
-- stores the response in memory
-- decides the next action
-- invokes tools only when enough information is available
+The agent follows a structured, multi-step flow instead of a single prompt. It:
+- Receives Telugu speech input from the user  
+- Converts speech to text, reasons over state, and gathers missing details  
+- Determines eligibility and generates a Telugu response, then speaks it back to the user
 
 ---
 
-## 🖼️ System Architecture
+## 📂 Project Structure
 
-![System Architecture](images/architecture_flow.png)
-<img width="1024" height="1536" alt="ChatGPT Image Dec 22, 2025, 08_52_49 PM" src="https://github.com/user-attachments/assets/14c9a8c4-e1c5-4dbf-b618-93656573ef25" />
-
-
-**Flow Overview:**
-1. User provides Telugu voice input  
-2. Speech is converted to text using Whisper  
-3. Text is normalized into Telugu script  
-4. Agent reasons using memory and a state machine  
-5. Tools are invoked for eligibility and scheme lookup  
-6. Final response is spoken in Telugu  
-
----
-
-## 🔁 Agent State Machine
-
-![State Machine](images/state_machine.png)
-
-**States Used:**
-- START  
-- ASK_AGE  
-- ASK_INCOME  
-- ASK_OCCUPATION  
-- EVALUATE  
-- DONE  
-<img width="1024" height="1536" alt="ChatGPT Image Dec 22, 2025, 09_03_14 PM" src="https://github.com/user-attachments/assets/63ad9e16-e9d7-4fad-9026-c5abada45c3a" />
-
-This ensures logical progression and prevents premature conclusions.
-
----
-# 🎙️ Voice Scheme Agent
-
-An AI-powered voice assistant for eligibility checks and scheme information with Telugu language support.
-
----
-
-
-
-## 🧰 Tools Used
-
-### 1️⃣ Eligibility Engine
-Determines which schemes apply based on:
-- age
-- annual income
-- occupation
-
-### 2️⃣ Scheme Information Tool (Mock API)
-Fetches descriptions and benefits of eligible schemes.
-
-> Tool usage is explicit and dynamic — responses are not hard-coded.
-
----
-# 🎙️ Voice Scheme Agent
-
-An AI-powered voice assistant for eligibility checks and scheme information with Telugu language support.
-
----
-
-
-
-
-### 🛠 Installation & Setup
-
-For detailed instructions on how to configure your environment and run the agent, please refer to our setup guide:
-
-👉 **[View Setup Instructions](./SETUP.md)**
-
-This document explains how to set up and run the agent locally.
-
-🔧 System Requirements
-Operating System: Windows / Linux / macOS
-
-Python: 3.9 or 3.10 (recommended)
-
-Microphone: Required for live voice input
-
-FFmpeg: Required for audio processing
----
- 🐍 Python Environment Setup
-1. Create a Virtual Environment
-It is recommended to use a virtual environment to keep dependencies organized.
-
-Bash
-
-# Create environment
-python -m venv venv
-
-# Activate environment (Windows)
-venv\Scripts\activate
-
-# Activate environment (Linux/macOS)
-source venv/bin/activate
-2. Install Dependencies
-Make sure you are inside the project directory, then run:
-
-Bash
-
-pip install -r requirements.txt
-
-🎧 FFmpeg Installation
-FFmpeg is required for audio decoding and preprocessing.
-
-Windows
-Download FFmpeg from ffmpeg.org.
-
-Extract the folder to a permanent location.
-
-Add the bin/ directory to your System PATH.
-
-Verify: ffmpeg -version
-
-Linux/macOS
-Bash
-
-# Linux
-sudo apt install ffmpeg
-
-# macOS
-brew install ffmpeg
-▶️ Running the Project
-1. Prepare Audio Input
-Place Telugu .wav audio files inside the audio/ directory.
-
-Note: Audio should be 16kHz, mono for best results.
-
-2. Run the Agent
-Execute the entry point script:
-
-Bash
-
-python main.py
-# 🎙️ Voice Scheme Agent
-
-An AI-powered voice assistant for eligibility checks and scheme information with Telugu language support.
-
----
-
-### 📂 Project Structure
-
-```text
+```
 voice_scheme_agent/
-├── audio/                   # Telugu WAV voice inputs
-├── images/                  # Architecture & state diagrams
-│   ├── architecture_flow.png
-│   └── state_machine.png
-├── agent.py                 # Agent logic & state machine
-├── agent_state.py           # Conversation memory
-├── eligibility_tool.py      # Eligibility engine (Tool 1)
-├── main.py                  # Entry point
-├── requirements.txt         # Project dependencies
-├── scheme_tool.py           # Scheme info retrieval (Tool 2)
-├── stt.py                   # Speech-to-text (Whisper + filters)
-├── text_normalizer.py       # Telugu normalization
-├── tts.py                   # Telugu text-to-speech
-└── README.md                # Project documentation
+├─ src/
+│  ├─ main.py          # Entry point
+│  ├─ agent.py         # Agent logic and state machine
+│  ├─ stt.py           # Speech-to-text integration
+│  ├─ tts.py           # Text-to-speech integration
+│  └─ tools/
+│     ├─ schemes_db.py # Scheme rules / database
+│     └─ eligibility.py# Eligibility computation
+├─ data/
+│  └─ schemes.json     # Scheme definitions and criteria
+├─ requirements.txt    # Dependencies
+└─ README.md           # Documentation
+```
 
+---
 
+## ✅ Setup & Run
 
+1. **Clone and enter the repo**
+   ```bash
+   git clone https://github.com/Saiteja140503/voice_scheme_agent.git
+   cd voice_scheme_agent
+   ```
 
+2. **Create virtual environment (recommended)**
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+   ```
 
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure environment**
+   Create a `.env` file or export environment variables for any STT/TTS/LLM providers you use:
+   ```
+   STT_API_KEY=your_stt_key
+   TTS_API_KEY=your_tts_key
+   LLM_API_KEY=your_llm_key
+   ```
+
+5. **Run the agent**
+   ```bash
+   python -m src.main
+   ```
+
+---
+
+## 🧪 Testing
+
+If tests are present, run them with:
+
+```bash
+pytest
+# or
+python -m unittest
+```
+
+---
+
+## 🛠️ Customization
+
+- Update **scheme data** in `data/schemes.json` to add or modify schemes and criteria.  
+- Change **Telugu prompts and responses** in `agent.py` (or prompts module).  
+- Swap **STT/TTS backends** by editing `stt.py` and `tts.py`.  
+
+---
+
+## 🤝 Contributions
+
+Contributions are welcome via issues and pull requests. Please describe changes clearly and keep them focused.
+
+---
+
+## 📜 License
+
+Add your chosen license here (for example, MIT) and include a `LICENSE` file in the repository.
